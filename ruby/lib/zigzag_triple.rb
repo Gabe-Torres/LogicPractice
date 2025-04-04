@@ -4,16 +4,18 @@ require 'rspec'
 def solution(numbers)
     result = []
     
-    (0..numbers.length-3).each do |i|
-        a, b,c = numbers[i], numbers[i + 1], numbers[i + 2]
-        
-        if (a<b&&b>c) || (a>b && b<c)
-            result << 1
+    numbers.each_cons(3) do |triple|
+        first_num = triple[0]
+        second_num = triple[1]
+        third_num = triple[2]
+
+        if (first_num < second_num && second_num > third_num) || (first_num > second_num && second_num < third_num) 
+            result.push(1)
         else 
-            result << 0 
+            result.push(0)
         end
-    end 
-    
+    end
     result
 end
+
 
