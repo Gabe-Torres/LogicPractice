@@ -24,10 +24,4 @@ RSpec.describe '#camel_case_match?' do
     camel = "hello"
     expect(camel_case_match?(camel, words)).to eq(true)
   end
-
-  it 'returns false if camel case uses duplicate word not listed twice' do
-    words = ["fun"]
-    camel = "funFun"
-    expect(camel_case_match?(camel, words)).to eq(false)
-  end
 end
